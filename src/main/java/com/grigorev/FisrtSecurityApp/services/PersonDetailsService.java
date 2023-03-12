@@ -13,7 +13,7 @@ import java.util.Optional;
 // Чтобы Spring Security знал, что этот сервис загружает пользователя реализуем интерфейс UserDetailsService
 // с единственным методом loadUserByUsername(String username)
 @Service
-public class PersonDetailsService implements UserDetailsService {
+public class  PersonDetailsService implements UserDetailsService {
 
     private final PeopleRepository peopleRepository;
 

@@ -1,4 +1,4 @@
-package com.grigorev.FisrtSecurityApp.security;
+/* package com.grigorev.FisrtSecurityApp.security;
 
 import com.grigorev.FisrtSecurityApp.services.PersonDetailsService;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -9,9 +9,10 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
-import java.util.Collection;
 import java.util.Collections;
 
+// Нужен только для кастомной аутентификации, для стандартной можно просто реализовать UserDetailsService
+// и передать его в SecurityConfig
 @Component
 public class AuthProviderImpl implements AuthenticationProvider {
 
@@ -44,11 +45,11 @@ public class AuthProviderImpl implements AuthenticationProvider {
             throw new BadCredentialsException("Incorrect password");
         }
 
-        return new UsernamePasswordAuthenticationToken(
-                personDetales /* Principal */,
-                password /* Credentials */,
-                Collections.emptyList()) /* Roles */;
-    }
+//        return new UsernamePasswordAuthenticationToken(
+//                personDetales,
+//                password,
+//                Collections.emptyList());
+//    }
 
     // Чисто технический метод, нужен Spring, чтобы понять для какого объекта Authentication
     // работает конкретный AuthProvider. Т.к. у нас он только один, то просто возвращаем true
@@ -57,3 +58,4 @@ public class AuthProviderImpl implements AuthenticationProvider {
         return true;
     }
 }
+*/
