@@ -6,6 +6,10 @@
 </head>
 <body>
 Hello world!
-<a href="/logout">Logout</a>
+<!--Добавили кнопку с POST запросом, потому что при использовании csrf защиты GET запрос для логаута не подходит-->
+<form th:action="@{/logout}" th:method="POST">
+    <input type="submit" value="Logout"/>
+</form>
+<!--<a href="/logout">Logout</a>-->
 </body>
 </html>

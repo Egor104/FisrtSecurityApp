@@ -2,9 +2,11 @@ package com.grigorev.FisrtSecurityApp.security;
 
 import com.grigorev.FisrtSecurityApp.models.Person;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.Collections;
 
 public class PersonDetails implements UserDetails {
 
@@ -14,9 +16,10 @@ public class PersonDetails implements UserDetails {
         this.person = person;
     }
 
+    // Метод должен возвращать роль пользователя или список его действий в виде коллекции
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return Collections.singletonList(new SimpleGrantedAuthority(person.getRole()));
     }
 
     @Override
