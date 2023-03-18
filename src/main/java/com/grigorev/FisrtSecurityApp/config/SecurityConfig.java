@@ -24,7 +24,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public SecurityConfig(PersonDetailsService personDetailsService) {
         this.personDetailsService = personDetailsService;
     }
-
+    // За настройку аутентификации отвечает метод configure(AuthenticationManagerBuilder auth).
     // Настраивает аутентификацию. С помощью personDetailsService Spring сам получит человека,
     // сам проверит его логин и пароль
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -33,6 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .passwordEncoder(getPasswordEncoder());
     }
 
+    // За настройку авторизации отвечает метод configure(HttpSecurity http):
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
